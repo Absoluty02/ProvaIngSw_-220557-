@@ -1,6 +1,6 @@
 package org.example;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -41,8 +41,8 @@ public class FunnyAlgorithmsTest
 
     }
     @Test
-    public void shouldAnswerWithTrue()
+    public void StringToIntConverterTest()
     {
-        assertTrue( true );
+        Assert.assertEquals( convertedNumber, f.stringToIntConverter("43") );
     }
 }
