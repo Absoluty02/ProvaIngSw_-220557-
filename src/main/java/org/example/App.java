@@ -8,6 +8,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        FunnyAlgorithms f = new FunnyAlgorithms();
+        System.out.println(f.stringToIntConverter("400000"));
     }
 }

@@ -69,8 +69,20 @@ public class FunnyAlgorithms {
 	 * @return
 	 * @throws UnsupportedOperationException
 	 */
-	public int stringToIntConverter(String number) throws UnsupportedOperationException {
-		throw new UnsupportedOperationException("To be implemented");
+	public int stringToIntConverter(String number) throws IllegalArgumentException {
+
+		if(number != null && number.matches("-?\\d+")){
+			int numeroTrasformato = Integer.valueOf(number);
+			if(numeroTrasformato < -32768 || numeroTrasformato > 32767){
+				throw new IllegalArgumentException("Numero inserito non compreso nell'intervallo supportato");
+			}
+			else{
+				return numeroTrasformato;
+			}
+		}
+		else {
+			throw new IllegalArgumentException("Stringa inserito non valida");
+		}
 	}
 
 }
