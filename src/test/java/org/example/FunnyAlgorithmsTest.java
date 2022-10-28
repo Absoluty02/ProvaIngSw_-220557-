@@ -17,29 +17,35 @@ public class FunnyAlgorithmsTest
      * Rigorous Test :-)
      */
 
-    Integer binarySearchTarget;
+    int binarySearchTarget;
     int binarySearchTargetPosition;
-    ArrayList<Integer> binarySearchArray;
-    ArrayList<Integer> UnorderedArray;
-    ArrayList<Integer> OrderedArray;
+    int[] binarySearchArray;
+    int[] UnorderedArray;
+    int[] OrderedArray;
     int convertedNumber;
 
     FunnyAlgorithms f;
 
     @Before
     public void ArraysInitialize(){
-        binarySearchArray = new ArrayList<>(Arrays.asList(10,34,21,54,7,24,4));
-        binarySearchTarget = 7;
-        binarySearchTargetPosition = 4;
+        binarySearchArray = new int[]{1,2,3,4,5,6,7};
+        binarySearchTarget = 4;
+        binarySearchTargetPosition = 3;
 
         f = new FunnyAlgorithms();
 
-        UnorderedArray = new ArrayList<>(Arrays.asList(10,43,23,5,67));
-        OrderedArray = new ArrayList<>(Arrays.asList(5,10,23,43,67));
+        UnorderedArray = new int[]{10,43,23,5,67};
+        OrderedArray = new int[]{5,10,23,43,67};
 
         convertedNumber = 43;
 
     }
+
+    @Test
+    public void BinarySearchTest(){
+        Assert.assertEquals(binarySearchTargetPosition, f.binarySearch(binarySearchArray, binarySearchTarget));
+    }
+
     @Test
     public void StringToIntConverterTest()
     {
